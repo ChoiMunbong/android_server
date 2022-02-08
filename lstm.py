@@ -1,7 +1,7 @@
 import pandas as pd
 from data_set import dataset
 from tensorflow.keras.preprocessing import timeseries_dataset_from_array
-from tensorflow.keras.models import Sequential
+from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Input, LSTM, Dense
 from app import time_set, date_set, user_ID, folder_name,save_folder_name
 

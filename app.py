@@ -24,6 +24,8 @@ tqdm_notebook.pandas()
 
 folder_name = "C:\\Users\\ChoiMunBong\\Downloads\\drive-download-20210820T075144Z-001\\"  # 파일이 있는 디렉토리로 변경해주십쇼
 save_folder_name = "./"
+
+
 user_ID = 'a98458d37c' #고객 type : string
 date_set = 20200826 # 임시 날짜설정 type : int
 time_set = 2345 #임시 시간설정 type : int
@@ -47,6 +49,12 @@ app = Flask(__name__)
 CORS(app)
 
 greeter = connect.connectDBMS(database_local, db_id, db_pw) #DB 설정입니다. 원하시는 DB로 바꿔주세요
+
+@app.route('/login_confirm', method = ['POST'])
+def login_confirm():
+    id_ = request.form['id_']
+    pw_ = request.form['pw_']
+
 
 @app.route('/', methods=['GET','POST','OPTIONS'])
 def hello_newton_():
@@ -100,8 +108,7 @@ def predict_day_():
 def predict_week_():
     gt = greeter.predict_week()
     return app.response_class(gt, content_type='application/json')
-#
-# api = Api(app)
+#api = Api(app)
 #
 # class PriceList(Resource):
 #     def get(self):
@@ -112,7 +119,6 @@ def predict_week_():
 #         return show_data
 # api.add_resource(PriceList, '/tou/')
 # api.add_resource(ShowList, '/show_data/')
-
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port='5000', debug=True)
