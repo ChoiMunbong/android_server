@@ -22,8 +22,8 @@ from flask_restful import Resource, Api, reqparse, abort
 
 tqdm_notebook.pandas()
 
-folder_name = "C:\\Users\\ChoiMunBong\\Downloads\\drive-download-20210820T075144Z-001\\"  # 파일이 있는 디렉토리로 변경해주십쇼
-save_folder_name = "./"
+folder_name = ".\\data"  # 파일이 있는 디렉토리로 변경해주십쇼
+save_folder_name = ".\\save_data"
 
 
 user_ID = 'a98458d37c' #고객 type : string
