@@ -50,11 +50,11 @@ CORS(app)
 
 greeter = connect.connectDBMS(database_local, db_id, db_pw) #DB 설정입니다. 원하시는 DB로 바꿔주세요
 
-@app.route('/login_confirm', method = ['POST'])
+@app.route('/login_confirm', methods = ['POST'])
 def login_confirm():
     id_ = request.form['id_']
     pw_ = request.form['pw_']
-
+    return True
 
 @app.route('/', methods=['GET','POST','OPTIONS'])
 def hello_newton_():
