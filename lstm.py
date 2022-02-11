@@ -3,8 +3,8 @@ from data_set import dataset
 from tensorflow.keras.preprocessing import timeseries_dataset_from_array
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Input, LSTM, Dense
-from app import time_set, date_set, user_ID, folder_name,save_folder_name
-
+# from app import time_set, date_set, user_ID, folder_name,save_folder_name
+from user_info import time_set, date_set, user_ID, folder_name,save_folder_name
 def lstm():
     frame = dataset()
     frame['Active_Power'] = 4 * frame['Active_Energy']

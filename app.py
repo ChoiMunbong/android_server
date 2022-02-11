@@ -17,18 +17,19 @@ from tqdm import tqdm_notebook, tqdm_pandas
 import os.path
 from flask_cors import CORS, cross_origin
 from tqdm.notebook import tqdm_notebook
+import user_info
 from flask_restful import Resource, Api, reqparse, abort
 
 
 tqdm_notebook.pandas()
 
-folder_name = ".\\data"  # 파일이 있는 디렉토리로 변경해주십쇼
-save_folder_name = ".\\save_data"
+user_info.folder_name = ".\\data"  # 파일이 있는 디렉토리로 변경해주십쇼
+user_info.save_folder_name = ".\\save_data"
 
 
-user_ID = 'a98458d37c' #고객 type : string
-date_set = 20200826 # 임시 날짜설정 type : int
-time_set = 2345 #임시 시간설정 type : int
+user_info.user_ID = 'a98458d37c' #고객 type : string
+user_info.date_set = 20200826 # 임시 날짜설정 type : int
+user_info.time_set = 2345 #임시 시간설정 type : int
 
 ##########################################################################################
 ##################################변경 가능한 부분##########################################
@@ -61,7 +62,7 @@ def hello_newton_():
     return 'Welcome to Newton!'
 @app.route('/show_data', methods=['GET','POST','OPTIONS'])
 def print_database_():
-    gt = greeter.show_data(user_ID, date_set)
+    gt = greeter.show_data(user_info.user_ID, user_info.date_set)
     # fls = flask.Response(gt)
     # fls.headers['Access-Control-Allow-Origin'] = "*"
     return app.response_class(gt, content_type='application/json')

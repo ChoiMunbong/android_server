@@ -2,7 +2,8 @@ import pandas as pd
 from pyarrow import csv
 from datetime import datetime, timedelta
 import os.path
-from app import time_set, date_set, user_ID, folder_name,save_folder_name
+from user_info import time_set, date_set, user_ID, folder_name,save_folder_name
+# from app import time_set, date_set, user_ID, folder_name,save_folder_name
 
 column_names = ['date', 'time', 'Region', 'Sub_Region', 'Customer_number', 'Contract', 'Contract_Power', 'Supply_type', 'High-Low', 'Active_Energy', 'Lagging_Reactive_Energy ', 'Leading_Reactive_Energy']
 

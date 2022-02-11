@@ -1,7 +1,7 @@
 import json
-from app import date_set
+import user_info
 
-date = date_set - 68
+date = user_info.date_set - 68
 date_temp = str(date)
 target_month = int(date_temp[4:6])
 temp_date = date - 100

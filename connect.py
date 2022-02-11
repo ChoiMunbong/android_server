@@ -8,7 +8,8 @@ from datetime import datetime
 from tensorflow.keras.preprocessing import timeseries_dataset_from_array
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Input, LSTM, Dense
-from app import time_set, date_set, user_ID, save_folder_name
+from user_info import time_set, date_set, user_ID, folder_name,save_folder_name
+# from app import time_set, date_set, user_ID, save_folder_name
 from data_set import dataset
 import show_data
 import fee
